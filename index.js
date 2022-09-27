@@ -1,26 +1,20 @@
-let value=0;
-window.onload=displayValue();
+const getRandomColor = () => `hsla(${Math.floor(Math.random() * 360)}, 100%, 50%, 1)`;
 
-function displayValue(){
-    document.getElementById("value").innerText=value;
+const getRandomNumber = () =>{
+    return Math.floor(Math.random() * 256);
+}
+const getBackgroundCircle=()=>{
+    return `radial-gradient(circle at -8.9% 51.2%, 
+        rgb(${getRandomNumber()}, ${getRandomNumber()},${getRandomNumber()}) 0%, 
+        rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()}) 15.9%, 
+        rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()}) 15.9%, 
+        rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()}) 24.4%, 
+        rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()}) 24.5%, 
+        rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()}) 66%)`;
 }
 
-function green(){
-    document.getElementById("value").style.color="rgb(0, 255, 13)";
-}
-
-function red(){
-    document.getElementById("value").style.color="red";
-}
-
-function incrCount(){
-    value=value+1;
-    displayValue();
-    green();
-}
-
-function decrCount(){
-    value=value-1;
-    displayValue();
-    red();
-}
+setInterval(() => {
+    document.getElementById("red-box").style.background = getRandomColor();
+    document.getElementById("blue-box").style.backgroundColor = getRandomColor();
+    document.getElementById("green-box").style.backgroundColor = getRandomColor();
+}, 1000);
