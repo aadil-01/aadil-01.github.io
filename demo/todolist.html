@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script>
+            function add(){
+                var data = document.getElementById('todo-inp').value;
+                if(data===''){
+                    alert("enter data");
+                    return;
+                }
+                var newDiv = document.createElement('div');
+                newDiv.innerText = data;
+                document.getElementById("tasks").appendChild(newDiv);
+                document.getElementById('todo-inp').value='';
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" placeholder="Enter task" id="todo-inp" />
+        <button onclick=add()>Add Task</button>
+        <div id="tasks"></div>
+    </body>
+</html>
