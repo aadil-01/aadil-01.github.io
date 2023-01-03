@@ -3,6 +3,7 @@ const getRandomColor = () => `hsla(${Math.floor(Math.random() * 360)}, 100%, 50%
 const getRandomNumber = () =>{
     return Math.floor(Math.random() * 256);
 }
+
 const getBackgroundCircle=()=>{
     return `radial-gradient(circle at -8.9% 51.2%, 
         rgb(${getRandomNumber()}, ${getRandomNumber()},${getRandomNumber()}) 0%, 
