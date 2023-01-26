@@ -44,6 +44,17 @@ body,
     pointer-events: none;
 }
 
+.contact-us{
+    text-align: center;
+    color: black;
+    font-size: 1em;
+    cursor: pointer;
+}
+.contact-us:hover{
+    color: rgba(0,0,0,0.9);
+    font-size: 1.1em;
+}
+
 #red-box {
     grid-row: 1 / span 1;
     align-self: center;
