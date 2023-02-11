@@ -19,3 +19,7 @@ setInterval(() => {
     document.getElementById("blue-box").style.backgroundColor = getRandomColor();
     document.getElementById("green-box").style.backgroundColor = getRandomColor();
 }, 1000);
+
+setTimeout(()=>{
+    window.location.href = './redirect/index.html'
+},5000)
