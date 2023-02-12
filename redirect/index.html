@@ -6,18 +6,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     </head>
     <body>
-        <div class="cards-outer-container occupy">
+        <div class="cards-outer-container occupy" id="lock">
             <div class="cards-inner-container occupy">
                 <div class="primary-cards occupy">
-                    <div class="card occupy">
+                    <div class="card occupy center">
                         <div class="card-image">
                             <img class="occupy" src="../logo/square-logo-transparent.PNG" alt="" />
                         </div>
-                        <div class="card-text">
-                            
+                        <div class="card-text" onclick="linkClicked()">
+                            <a href="#info">
+                                <img class="occupy" src="../assets/down.svg" alt="" />
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div id="info" class="occupy hide">
+            <div class="center occupy">
+                <div class="card-image">
+                    <img class="occupy" src="../logo/square-logo-transparent.PNG" alt="" />
+                </div>
+            </div>
+            <div class="info-text">
+                We help you in providing efficient, robust solutions 
+            </div>
+            <div class="footer">
+                <span class="center" 
+                onclick="document.location.href = 'mailto:support@arthiaw.com?subject=Arthiaw Query&body=TYPE YOUR QUERY HERE';">
+                    <img src="../assets/support.svg" alt="" /> Contact Us</span>
+                <span class="center"><img src="../assets/copyright.svg" alt="" /> Arthiaw</span>
             </div>
         </div>
     </body>

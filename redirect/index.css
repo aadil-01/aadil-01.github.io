@@ -10,6 +10,10 @@ html,body{
     border: 0;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 :root{
     --color-1: rgb(211,225,76);
     --color-2: rgb(79,151,173);
@@ -21,13 +25,113 @@ html,body{
     height: 100%;
 }
 
-body{
-    background: url('./background.svg');
-    background-size: cover;
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: grid;
+    grid-template-rows: 30% 50% 20%;
 }
 
 .cards-outer-container{
     padding: 0px;
+    background-image: url("./background.svg");
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: move 5s infinite alternate ease-in-out;
+}
+
+.card{
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    background-color: transparent;
+    animation: 1s slide ease-in-out both;
+}
+
+.card-image{
+    width: 250px;
+    height: 250px;
+    border-radius: 250px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.card-image > img{
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.card-text{
+    width: 80px;
+    height: 80px;
+    animation: move-down 2s infinite ease;
+}
+
+.primary-cards > .card{
+    flex-direction: column;
+}
+
+.info-text{
+    text-align: center;
+}
+
+.footer{
+    background-color: var(--color-3);
+    color: #FEFEFE;
+    box-shadow: 0px -1px 3px 0px rgba(0,0,0,0.4);
+    text-align: center;
+    display: grid;
+    grid-template-rows: 60% 40%;
+}
+
+.footer > span{
+    justify-self: center;
+    align-self: center;
+}
+
+.footer > span:first-child{
+    cursor: pointer;
+}
+
+@media (max-width:768px) {
+    .card-image{
+        width: 180px;
+        height: 180px;
+    }
+    .card-text{
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+@keyframes move{
+    0%{
+        background-position-x: 40%;
+    }
+    100%{
+        background-position-x: 0;
+    }
+}
+
+@keyframes move-down{
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(100%);
+    }
 }
 
 @keyframes slide{
@@ -39,25 +143,4 @@ body{
         opacity: 1;
         scale: 1;
     }
-}
-
-.card{
-    backdrop-filter: blur(15px);
-    animation: 1s slide ease-in-out both;
-}
-
-.card-image{
-    width: 250px;
-    height: 250px;
-    border-radius: 250px;
-    overflow: hidden;
-}
-
-.primary-cards > .card{
-    color: #FEFEFE;
-    background: url('./background.svg');
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
