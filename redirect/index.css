@@ -90,8 +90,10 @@ html{
 
 .info-text > img {
     object-fit: cover;
-    height: 110%;
-    animation: 2s wave ease infinite alternate;
+    height: 140%;
+    animation: 2.5s wave infinite;
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.4));
+    transform: rotate(-5deg);
 }
 
 .footer{
@@ -100,7 +102,7 @@ html{
     box-shadow: 0px -1px 3px 0px rgba(0,0,0,0.4);
     text-align: center;
     display: grid;
-    grid-template-rows: 60% 40%;
+    grid-template-rows: 70% 30%;
 }
 
 .footer > span {
@@ -129,15 +131,14 @@ html{
 }
 
 @keyframes wave{
-    0%{
-        transform: rotate(-5deg);
-    }
-    50%{
-        transform: rotate(0);
-    }
-    100%{
-        transform: rotate(5deg);
-    }
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }
+  100% { transform: rotate( 0.0deg) }
 }
 
 @keyframes move{
